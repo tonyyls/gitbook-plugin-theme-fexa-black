@@ -1,0 +1,27 @@
+{
+  "name": "gitbook-plugin-theme-fexa-black",
+  "author": {
+    "name": "yulongsheng"
+  },
+  "bugs": {
+    "url": "https://github.com/tonyyls/gitbook-plugin-theme-fexa-black/issues"
+  },
+  "dependencies": {},
+  "description": "Gitbook theme for BingoCloud docs",
+  "engines": {
+    "gitbook": ">=3.0.0"
+  },
+  "homepage": "https://github.com/tonyyls/gitbook-plugin-theme-fexa-black#readme",
+  "keywords": [
+    "gitbook",
+    "theme",
+    "fexa"
+  ],
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tonyyls/gitbook-plugin-theme-fexa-black.git"
+  },
+  "scripts": {},
+  "version": "0.1.0"
+}

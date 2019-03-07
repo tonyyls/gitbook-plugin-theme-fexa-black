@@ -1,0 +1,234 @@
+body {
+  font-family: "Helvetica Neue", "Hiragino Sans GB", "Microsoft YaHei", "\9ED1\4F53", Arial, sans-serif;
+  letter-spacing: .2px;
+  text-rendering: optimizeLegibility;
+}
+.markdown-section h1,
+.markdown-section h2,
+.markdown-section h3,
+.markdown-section h4,
+.markdown-section h5,
+.markdown-section h6 {
+  margin-bottom: .5em;
+  font-weight: 400;
+}
+.markdown-section p {
+  line-height: 2;
+}
+.markdown-section img {
+  padding: 8px;
+  background: #e4e4e478;
+  transition: all 1s;
+  box-sizing: border-box;
+  box-shadow: 0 0 4px #dcdcdc;
+  margin-left: 10px;
+  margin-right: 10px;
+  max-width: 95%;
+}
+.markdown-section img:hover {
+  box-shadow: 0 0 10px #bbb
+}
+
+.exc-trigger {
+  color: #333333;
+}
+
+.navigation {
+  display: none;
+}
+
+/*Book inner page*/
+
+.book-summary-title {
+  height: 50px;
+  line-height: 50px;
+  padding-left: 30px;
+  font-size: 18px;
+  color: #403e3e;
+}
+
+.book-summary,
+.book-body {
+  top: 60px;
+}
+
+.book-summary ul.summary li.active {
+  border-right: 3px solid #f34d4d;
+  background: #f3f1f1;
+}
+
+.book-summary ul.summary li.active>a {
+  color: #f34d4d;
+  text-decoration: none;
+}
+
+.book-summary ul.summary li a:hover {
+  text-decoration: none;
+}
+
+.page-inner {
+  max-width: none;
+  padding: 20px 270px 40px 40px;
+}
+
+.header-inner {
+  width: 100%;
+  padding: 13px 30px;
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+  background: #1E1D22;
+  margin: 0 auto;
+  height: 60px;
+}
+
+.header-inner:before,
+.header-inner:after {
+  content: " ";
+  display: table;
+  line-height: 0;
+}
+
+.header-inner:after {
+  clear: both;
+}
+
+.header-inner #book-search-input {
+  float: right;
+  padding: 0;
+  border: none;
+  user-select: none;
+  background: none;
+  display: none;
+}
+
+.header-inner #book-search-input input[type="text"] {
+  width: 200px;
+  background: #1b1b1f;
+  border-radius: 20px;
+  line-height: 22px;
+  border: 1px solid #6d6c6c;
+  color:#b5b5b5;
+}
+
+.header-inner .search-icon {
+  float: right;
+  height: 26px;
+  width: 26px;
+  background: url('./search.png');
+  background-size: 26px 26px;
+  background-repeat: no-repeat;
+  margin-top: 5px;
+  cursor: pointer;
+}
+
+.header-inner .logo {
+  float: left;
+  height: 35px;
+  width: 100px;
+  background: url('./logo.png');
+  background-size: 100px 35px;
+  background-repeat: no-repeat;
+}
+
+.header-inner .logo img {
+  display: block;
+  height: inherit;
+  padding: 5px 0;
+}
+
+.header-inner .title {
+  float: left;
+  font-size: 20px;
+  line-height: 36px;
+  margin-left: 10px;
+  color: #ffffff;
+}
+
+/* 导航 */
+.header-inner .header-nav {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  float: right;
+  display: table;
+}
+
+.header-inner .header-nav li {
+  display: table-cell;
+  vertical-align: middle;
+  min-width: 50px;
+  margin-right: 20px;
+  padding: 8px 15px 8px 15px;
+}
+
+.header-inner .header-nav li a {
+  color: #ffffff;
+}
+
+.header-nav .nav-border{
+  border:0.5px solid #807e7e;
+  border-radius: 2px;
+  padding-left: 20px !important;
+  padding-right: 20px !important;
+}
+.header-nav .nav-border:hover{
+  background: #f34d4d;
+  border:0.5px solid #f34d4d;
+  color: #ffffff;
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  .book-summary,
+  .book-body {
+    top: 101px;
+  }
+  .header-inner #book-search-input {
+    clear: both;
+    width: 100%;
+  }
+}
+/*Book inner page end*/
+
+/* Book  anchor*/
+.book-anchor {
+  width: 180px;
+  position: absolute;
+  top: 120px;
+  right: 30px;
+  padding: 10px 0px 10px 0px;
+  z-index: 999;
+  user-select: none;
+  border-left: 1px solid #ececec;
+}
+.book-anchor-title {
+  line-height: 38px;
+  font-weight: 400;
+  cursor: pointer;
+}
+.book-anchor a {
+  display: block;
+  line-height: 25px;
+  color: #656565;
+  font-size: 13px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.book-anchor a:hover {
+  color: #f34d4d;
+  text-decoration: none;
+}
+.book-anchor .selected {
+  color: #f34d4d;
+  text-decoration: none;
+  font-weight: bold;
+}
+.book-anchor .anchor-h1 {
+  padding-left: 10px;
+}
+.book-anchor .anchor-h2 {
+  padding-left: 20px;
+}
+.book-anchor .anchor-h3{
+  padding-left: 30px;
+}
