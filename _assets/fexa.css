@@ -232,3 +232,41 @@ body {
 .book-anchor .anchor-h3{
   padding-left: 30px;
 }
+
+/* md中的样式 */
+.fexa-block{
+  margin-top: 40px;
+  margin-left: 10px;
+  width:100%;
+  display:flex;
+}
+.fexa-block>div:hover{
+  transform: scale(1.03);
+}
+.fexa-block>div:hover h6{
+  color: #f34d4d;
+}
+
+.fexa-block div{
+  width: 230px;
+  min-height: 138px;
+  margin-right: 20px;
+  padding: 20px;
+  border: none;
+  box-shadow: 0 0 2px rgba(0,0,0,.12), 0 2px 2px rgba(0,0,0,.12);
+  cursor: pointer;
+  -webkit-transition: box-shadow .2s linear;
+  -webkit-transition: transform .2s linear;
+  transition: box-shadow .2s linear;
+  transition: transform .2s linear;
+}
+.fexa-block div a:hover{
+  text-decoration: none;
+}
+
+.fexa-block h6{
+  color: #000000;
+  font-size: 18px;
+  margin: 0;
+  padding: 0;
+}
