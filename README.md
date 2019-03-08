@@ -1,4 +1,4 @@
-# Gitbook theme for BingoPaaS Docs
+# Gitbook theme
 
 ![Image](https://github.com/tonyyls/gitbook-plugin-theme-fexa-black/blob/master/preview.png)
 
@@ -9,7 +9,7 @@ Add the theme to your book's configuration `book.json` or `book.js`:
 ```js
 {
     "plugins": [
-        "theme-fexa"
+        "theme-fexa-black"
     ],
     "variables": {
         "themeFexa":{
@@ -17,7 +17,23 @@ Add the theme to your book's configuration `book.json` or `book.js`:
                 {
                     "url":"http://...",
                     "target":"_blank",
-                    "name": "简易教程"
+                    "name": "解决方案"
+                },
+                {
+                    "url":"http://...",
+                    "target":"_blank",
+                    "name": "产品中心"
+                },
+                {
+                    "url":"http://...",
+                    "target":"_blank",
+                    "name": "开发者文档"
+                },
+                {
+                    "url":"http://...",
+                    "target":"_blank",
+                    "name": "管理控制台",
+                    "border": "nav-border"
                 }
             ]
         },
@@ -25,8 +41,8 @@ Add the theme to your book's configuration `book.json` or `book.js`:
     "pluginsConfig": {
         "theme-fexa":{
             "search-placeholder":"输入关键字搜索", //搜索框提示信息
-            "logo":"./logo.png", //logo地址
-            "favicon": "./favicon.ico" //ico地址
+            "logo":"./assets/logo.png", //logo地址
+            "favicon": "./assets/favicon.ico" //ico地址
         }
     }
 },
@@ -48,7 +64,8 @@ plugins: [
     "copy-code-button",
     "cuav-chapters",
     "heading-anchors",
-    "theme-fexa"
+    "theme-fexa-black",
+    "lightbox"
     //...
 ]
 ```

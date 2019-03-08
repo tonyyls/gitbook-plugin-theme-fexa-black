@@ -1,6 +1,6 @@
 var fs = require('fs');
 var path = require('path');
-
+var theme = "gitbook-plugin-theme-fexa-black";
 module.exports = {
     website: {
         assets: './_assets/',
@@ -41,7 +41,7 @@ module.exports = {
             pathFile = configOption && configOption.logo;
             if(pathFile){
                 var logoPath = path.join(process.cwd(), pathFile);
-                var pluginLogoPath = path.join(process.cwd(), output, 'gitbook','gitbook-plugin-theme-fexa',"logo.png");
+                var pluginLogoPath = path.join(process.cwd(), output, 'gitbook',theme,"logo.png");
                 if (fs.existsSync(logoPath)) {
                     fs.writeFileSync(pluginLogoPath, fs.readFileSync(logoPath));
                 }
