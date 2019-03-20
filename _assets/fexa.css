@@ -239,6 +239,7 @@ body {
   margin-left: 10px;
   width:100%;
   display:flex;
+  min-width: 600px;
 }
 .fexa-block>div:hover{
   transform: scale(1.03);
@@ -246,7 +247,6 @@ body {
 .fexa-block>div:hover h6{
   color: #f34d4d;
 }
-
 .fexa-block div{
   width: 230px;
   min-height: 138px;
@@ -263,8 +263,33 @@ body {
 .fexa-block div a:hover{
   text-decoration: none;
 }
-
 .fexa-block h6{
+  color: #000000;
+  font-size: 18px;
+  margin: 0;
+  padding: 0;
+}
+
+
+.fexa-block-1{
+  margin-top: 10px;
+  width:100%;
+  display:flex;
+  min-width: 600px;
+}
+.fexa-block-1 div{
+  width: 230px;
+  margin-right: 20px;
+  border: none;
+  cursor: pointer;
+}
+.fexa-block-1 a{
+  color:#666;
+}
+.fexa-block-1 div a:hover{
+  text-decoration: none;
+}
+.fexa-block-1 h6{
   color: #000000;
   font-size: 18px;
   margin: 0;

@@ -50,10 +50,10 @@ module.exports = {
             //config.json
             pathFile = configOption && configOption.config;
             if(pathFile){
-                var configPath = path.join(process.cwd, pathFile);
-                var pluginConfigPath = path.join(process.cwd(),output);
+                var configPath = path.join(process.cwd(), pathFile);
+                var pluginConfigPath = path.join(process.cwd(),output,'config.json');
                 if(fs.existsSync(configPath)){
-                    fs.copyFileSync(pathFile,pluginConfigPath);
+                    fs.writeFileSync(pluginConfigPath, fs.readFileSync(configPath));
                 }
             }
 
