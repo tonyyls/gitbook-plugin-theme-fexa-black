@@ -46,6 +46,17 @@ module.exports = {
                     fs.writeFileSync(pluginLogoPath, fs.readFileSync(logoPath));
                 }
             }
+
+            //config.json
+            pathFile = configOption && configOption.config;
+            if(pathFile){
+                var configPath = path.join(process.cwd, pathFile);
+                var pluginConfigPath = path.join(process.cwd(),output);
+                if(fs.existsSync(configPath)){
+                    fs.copyFileSync(pathFile,pluginConfigPath);
+                }
+            }
+
         }
     }
 };
