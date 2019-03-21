@@ -1,5 +1,6 @@
 require(['gitbook', 'jquery'], function(gitbook, $) {
     var configs;
+    var apiUrl = "../../../../api/product/withFavorite";
     //生成内容导航
     function generateSectionNavigator(){
         $(".page-inner .markdown-section").find("h1,h2,h3").each(function(){
@@ -38,7 +39,7 @@ require(['gitbook', 'jquery'], function(gitbook, $) {
         var $searchIcon = $("#searchIcon");
         var $search = $('#book-search-input');
         var $searchInput = $search.find("input");
-        var placeholder = configs["search-placeholder"] || "输入关键字搜索"
+        var placeholder = configs.pluginsConfig["theme-fexa"]["search-placeholder"] || "输入关键字搜索"
         $searchInput.attr("placeholder",placeholder);
         $searchIcon.click(function(e){
             $search.fadeIn();
@@ -56,22 +57,40 @@ require(['gitbook', 'jquery'], function(gitbook, $) {
     }
 
     function fetchConfig(){
+        //先从配置文件中找
         var url = "../../config.json";
-        $.get(url,function(data){
-            var consolePath = data["consolePath"];
-            var code = data["code"];
-            if(!consolePath)return;
-            //控制台跳转
-            $.get(consolePath+"/api/product/withFavorite",function(data){
-                var obj = data.filter(function(item){
-                    return item.code == code;
-                });
-                if(obj.length>0){
-                    $(".console").click(function(e){
-                        window.open(obj[0].url);
-                    })
+        
+        $.ajax({
+            url:url,
+            success:function(data){
+                var consolePath = data["consolePath"];
+                if(!consolePath)return;
+                apiUrl = consolePath+"/api/product/withFavorite";
+                getConsoleInfo(apiUrl);
+            },
+            error:function(err){
+                if(err.status==404){
+                    //相对路径
+                    getConsoleInfo(apiUrl);
                 }
+            }
+        });
+    }
+
+    function getConsoleInfo(url,callback){
+        var code = configs.code;
+        console.log(url);
+        //控制台跳转
+        $.get(url,function(data){
+            var obj = data.filter(function(item){
+                return item.code == code;
             });
+            if(obj.length>0){
+                $(".console").click(function(e){
+                    window.open(obj[0].url);
+                })
+            }
+            callback && callback(data);
         });
     }
 
@@ -80,11 +99,14 @@ require(['gitbook', 'jquery'], function(gitbook, $) {
     });
 
     gitbook.events.on('page.change', function() {
-        configs = gitbook.state.config.pluginsConfig["theme-fexa"];
+        configs = gitbook.state.config;
+        console.log(gitbook.state.config);
         setBaseLayout();
         generateSectionNavigator();
-        if(configs.config){
+        if(configs.pluginsConfig["theme-fexa"]["config"]){
             fetchConfig();
+        }else{
+            getConsoleInfo(apiUrl);
         }
     });
 });

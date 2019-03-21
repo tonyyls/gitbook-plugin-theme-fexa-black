@@ -28,7 +28,11 @@ body {
 .markdown-section img:hover {
   box-shadow: 0 0 10px #bbb
 }
-
+.markdown-section code{
+  background-color: #f58876;
+  color: #fff;
+  border-radius: 4px;
+}
 .exc-trigger {
   color: #333333;
 }
@@ -107,6 +111,7 @@ body {
   line-height: 22px;
   border: 1px solid #6d6c6c;
   color:#b5b5b5;
+  margin-right: 10px;
 }
 
 .header-inner .search-icon {
@@ -117,6 +122,7 @@ body {
   background-size: 26px 26px;
   background-repeat: no-repeat;
   margin-top: 5px;
+  margin-right: 10px;
   cursor: pointer;
 }
 
