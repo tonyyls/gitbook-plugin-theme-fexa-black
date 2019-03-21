@@ -1,6 +1,6 @@
 require(['gitbook', 'jquery'], function(gitbook, $) {
     var configs;
-    var apiUrl = "../../../../api/product/withFavorite";
+    var apiUrl = "/api/product/withFavorite";
     //生成内容导航
     function generateSectionNavigator(){
         $(".page-inner .markdown-section").find("h1,h2,h3").each(function(){
