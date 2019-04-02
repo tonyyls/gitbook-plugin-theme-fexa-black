@@ -29,8 +29,7 @@ body {
   box-shadow: 0 0 10px #bbb
 }
 .markdown-section code{
-  background-color: #f58876;
-  color: #fff;
+  background-color: #f5ce76;
   border-radius: 4px;
 }
 .exc-trigger {

@@ -65,7 +65,7 @@ require(['gitbook', 'jquery'], function(gitbook, $) {
             success:function(data){
                 var consolePath = data["consolePath"];
                 if(!consolePath)return;
-                apiUrl = consolePath+"/api/product/withFavorite";
+                apiUrl = consolePath+ apiUrl;
                 getConsoleInfo(apiUrl);
             },
             error:function(err){
@@ -79,7 +79,6 @@ require(['gitbook', 'jquery'], function(gitbook, $) {
 
     function getConsoleInfo(url,callback){
         var code = configs.code;
-        console.log(url);
         //控制台跳转
         $.get(url,function(data){
             var obj = data.filter(function(item){
