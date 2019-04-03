@@ -242,6 +242,7 @@ body {
 .fexa-block{
   margin-top: 40px;
   margin-left: 10px;
+  margin-bottom: 10px;
   width:100%;
   display:flex;
   min-width: 600px;

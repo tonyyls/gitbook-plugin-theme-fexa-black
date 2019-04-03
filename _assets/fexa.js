@@ -1,6 +1,7 @@
 require(['gitbook', 'jquery'], function(gitbook, $) {
     var configs;
     var apiUrl = "/api/product/withFavorite";
+    var defaultPath = "http://tfuse.bingosoft.net";
     //生成内容导航
     function generateSectionNavigator(){
         $(".page-inner .markdown-section").find("h1,h2,h3").each(function(){
@@ -56,45 +57,31 @@ require(['gitbook', 'jquery'], function(gitbook, $) {
         $(".summary .divider").hide();
     }
 
-    function fetchConfig(){
-        //先从配置文件中找
-        var url = "../../config.json";
-        
+    function tryFetchConfig(url){
+        var code = configs.code;
         $.ajax({
             url:url,
             success:function(data){
-                var consolePath = data["consolePath"];
-                if(!consolePath)return;
-                apiUrl = consolePath+ apiUrl;
-                getConsoleInfo(apiUrl);
+                var obj = data.filter(function(item){
+                    return item.code == code;
+                });
+                if(obj.length>0){
+                    $(".console").click(function(e){
+                        window.open(obj[0].url);
+                    })
+                }
             },
             error:function(err){
                 if(err.status==404){
-                    //相对路径
-                    getConsoleInfo(apiUrl);
+                    url = defaultPath+apiUrl;
+                    tryFetchConfig(url);
                 }
             }
         });
     }
 
-    function getConsoleInfo(url,callback){
-        var code = configs.code;
-        //控制台跳转
-        $.get(url,function(data){
-            var obj = data.filter(function(item){
-                return item.code == code;
-            });
-            if(obj.length>0){
-                $(".console").click(function(e){
-                    window.open(obj[0].url);
-                })
-            }
-            callback && callback(data);
-        });
-    }
-
     gitbook.events.on('start', function() {
-
+       
     });
 
     gitbook.events.on('page.change', function() {
@@ -102,10 +89,10 @@ require(['gitbook', 'jquery'], function(gitbook, $) {
         console.log(gitbook.state.config);
         setBaseLayout();
         generateSectionNavigator();
-        if(configs.pluginsConfig["theme-fexa"]["config"]){
-            fetchConfig();
-        }else{
-            getConsoleInfo(apiUrl);
+        try{
+            tryFetchConfig(apiUrl);
+        }catch(err){
+            console.log(err);
         }
     });
 });
