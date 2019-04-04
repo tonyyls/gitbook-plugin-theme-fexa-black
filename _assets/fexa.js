@@ -64,6 +64,14 @@ require(['gitbook', 'jquery'], function(gitbook, $) {
 
     function tryFetchConfig(url){
         var code = configs.code;
+        var nav = configs.variables["themeFexa"].nav;
+        
+        //如果没有控制台的配置就不发请求
+        var consoleObj = nav.filter(function(item){
+            return item.type == "console";
+        });
+        if(consoleObj.length<=0)return;
+        
         $.ajax({
             url:url,
             success:function(data){
