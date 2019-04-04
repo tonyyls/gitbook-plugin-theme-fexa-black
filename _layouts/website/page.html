@@ -21,6 +21,10 @@
 			{%- endfor %}
 		</ul>
 
+		<!-- Home -->
+		{% if book.themeFexa.showHome != false%}
+		<div id="homeIcon" class="home-icon"></div>
+		{% endif %}
 		<!-- Search -->
 		<div id="searchIcon" class="search-icon"></div>
 		{% block search_input %}{% endblock %}

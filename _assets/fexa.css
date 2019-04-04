@@ -125,6 +125,18 @@ body {
   cursor: pointer;
 }
 
+.header-inner .home-icon {
+  float: right;
+  height: 26px;
+  width: 26px;
+  background: url('./home.png');
+  background-size: 26px 26px;
+  background-repeat: no-repeat;
+  margin-top: 5px;
+  margin-right: 10px;
+  cursor: pointer;
+}
+
 .header-inner .logo {
   float: left;
   height: 35px;

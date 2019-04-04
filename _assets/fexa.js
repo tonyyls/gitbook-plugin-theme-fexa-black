@@ -52,6 +52,11 @@ require(['gitbook', 'jquery'], function(gitbook, $) {
             $searchIcon.fadeIn();
         });
 
+        var $homeIcon = $("#homeIcon");
+        $homeIcon.click(function(e){
+            location.href = "/";
+        });
+
         //去掉gitbook-link
         $(".summary .gitbook-link").hide();
         $(".summary .divider").hide();
@@ -86,7 +91,6 @@ require(['gitbook', 'jquery'], function(gitbook, $) {
 
     gitbook.events.on('page.change', function() {
         configs = gitbook.state.config;
-        console.log(gitbook.state.config);
         setBaseLayout();
         generateSectionNavigator();
         try{

@@ -13,6 +13,7 @@ Add the theme to your book's configuration `book.json` or `book.js`:
     ],
     "variables": {
         "themeFexa":{
+            "showHome": false, //是否显示 home 图标，默认显示
             "nav":[
                 {
                     "url":"http://...",
@@ -33,7 +34,8 @@ Add the theme to your book's configuration `book.json` or `book.js`:
                     "url":"http://...",
                     "target":"_blank",
                     "name": "管理控制台",
-                    "border": "nav-border"
+                    "border": "nav-border",
+                    "type": "console" //跳转控制台用，非通用属性
                 }
             ]
         },
