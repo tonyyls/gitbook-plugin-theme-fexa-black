@@ -1,7 +1,7 @@
 require(['gitbook', 'jquery'], function(gitbook, $) {
     var configs;
     var apiUrl = "/api/product/withFavorite";
-    var defaultPath = "http://tfuse.bingosoft.net";
+    var defaultPath = "https://tfuse.bingosoft.net";
     //生成内容导航
     function generateSectionNavigator(){
         $(".page-inner .markdown-section").find("h1,h2,h3").each(function(){
