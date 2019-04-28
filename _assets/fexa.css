@@ -4,7 +4,7 @@ body {
   text-rendering: optimizeLegibility;
 }
 .markdown-section{
-  padding:2px;
+  padding-bottom:20px;
 }
 .markdown-section h1,
 .markdown-section h2,
