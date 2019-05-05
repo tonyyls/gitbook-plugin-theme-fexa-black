@@ -62,6 +62,7 @@ require(['gitbook', 'jquery'], function(gitbook, $) {
         $(".summary .divider").hide();
     }
 
+    //尝试获取配置信息
     function tryFetchConfig(url){
         var code = configs.code;
         var nav = configs.variables["themeFexa"].nav;
@@ -93,6 +94,14 @@ require(['gitbook', 'jquery'], function(gitbook, $) {
         });
     }
 
+    //获取url参数
+    function getUrlParameter(name) {
+        name = name.replace(/[\[]/, '\\[').replace(/[\]]/, '\\]');
+        var regex = new RegExp('[\\?&]' + name + '=([^&#]*)');
+        var results = regex.exec(location.search);
+        return results === null ? '' : decodeURIComponent(results[1].replace(/\+/g, ' '));
+    };
+
     gitbook.events.on('start', function() {
        
     });
@@ -105,6 +114,16 @@ require(['gitbook', 'jquery'], function(gitbook, $) {
             tryFetchConfig(apiUrl);
         }catch(err){
             console.log(err);
+        }
+
+        // 遇到一些特定参数
+        var isRightRef = getUrlParameter("isRightRef");
+        if(isRightRef == "true"){
+            $(".header-inner").hide();
+            $(".book-summary, .book-body").css("top","0px");
+            $(".book-anchor").hide();
+            $("body>div").removeClass("with-summary");
+            $(".js-toolbar-action").hide();
         }
     });
 });
