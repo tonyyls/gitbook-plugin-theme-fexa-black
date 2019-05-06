@@ -117,7 +117,7 @@ require(['gitbook', 'jquery'], function(gitbook, $) {
         }
 
         // 遇到一些特定参数
-        var isRightRef = getUrlParameter("isRightRef");
+        var isRightRef = $(window.frameElement).attr("isrightref");
         if(isRightRef == "true"){
             $(".header-inner").hide();
             $(".book-summary, .book-body").css("top","0px");
