@@ -81,7 +81,8 @@ require(['gitbook', 'jquery'], function(gitbook, $) {
                 });
                 if(obj.length>0){
                     $(".console").click(function(e){
-                        window.open(obj[0].url);
+                        // window.open(obj[0].url);
+                        window.location.href = obj[0].url;
                     })
                 }
             },
