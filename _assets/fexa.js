@@ -114,7 +114,6 @@ require(['gitbook', 'jquery'], function(gitbook, $) {
         try{
             tryFetchConfig(apiUrl);
         }catch(err){
-            console.log(err);
         }
 
         // 遇到一些特定参数
