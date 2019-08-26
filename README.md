@@ -14,6 +14,7 @@ Add the theme to your book's configuration `book.json` or `book.js`:
     "variables": {
         "themeFexa":{
             "showHome": false, //是否显示 home 图标，默认显示
+            "showNavigator": false, //是否显示 内容的导航树
             "nav":[
                 {
                     "url":"http://...",
