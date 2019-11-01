@@ -220,6 +220,9 @@ body {
   z-index: 999;
   user-select: none;
   border-left: 1px solid #ececec;
+  bottom: 40px;
+	overflow-x: hidden;
+	overflow-y: scroll;
 }
 .book-anchor-title {
   line-height: 38px;
